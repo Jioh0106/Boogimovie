@@ -197,7 +197,8 @@ body {
 			<div class="dropdown">
 				<button class="dropdown-btn" onclick="location.href='movie'">영화</button>
 				<div class="dropdown-submenu">
-					<a href="movie">현재상영작</a> <a href="movieFuture">상영예정작</a>
+					<a href="movie">현재상영작</a> 
+					<a href="movieFuture">상영예정작</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -213,17 +214,13 @@ body {
 <!-- 					<a href="#none">상영스케줄</a> -->
 				</div>
 			</div>
-<!-- 			<div class="dropdown"> -->
-<!-- 				<button class="dropdown-btn" onclick="location.href='myp_main'">마이페이지</button> -->
-<!-- 				<div class="dropdown-submenu"> -->
-<!-- 					<a href="myp_reservation">예매내역</a> <a href="myp_store">스토어</a> <a href="myp_cancel">취소내역</a> <a href="myp_coupon">쿠폰</a> <a href="myp_point">포인트</a>  -->
-<!-- 					<a href="myp_oto_breakdown">문의내역</a> <a href="myp_info_modify">회원정보수정</a> <a href="myp_withdraw_info">회원탈퇴</a> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
+
 			<div class="dropdown">
 				<button class="dropdown-btn" onclick="location.href='csc_main'">고객센터</button>
 				<div class="dropdown-submenu">
-					<a href="csc_notice">공지사항</a> <a href="csc_faq">자주묻는질문</a> <a href="csc_oto">1:1문의</a>
+					<a href="csc_notice">공지사항</a> 
+					<a href="csc_faq">자주묻는질문</a> 
+					<a href="csc_oto">1:1문의</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -233,9 +230,9 @@ body {
 				</div>
 			</div>
 			<div class="dropdown">
-				<button class="dropdown-btn" onclick="location.href='boogi_store'">스토어</button>
+				<button class="dropdown-btn" onclick="location.href='store'">스토어</button>
 				<div class="dropdown-submenu">
-					<a href="boogi_store">스토어</a> 
+					<a href="store">스토어</a> 
 				</div>
 			</div>
 		</div>

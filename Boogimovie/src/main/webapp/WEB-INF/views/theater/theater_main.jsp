@@ -10,8 +10,7 @@
 <meta charset="UTF-8">
 <title>부기무비 전체극장</title>
 <!-- 부트스트랩 CSS, JS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css">
-<script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <!-- 극장 theater.css  -->
 <link href="${pageContext.request.contextPath}/resources/css/theater.css" rel="stylesheet" type="text/css">
 <!-- 제이쿼리 -->
@@ -22,10 +21,10 @@
 
 <body>
 	<header>
-		<jsp:include page="../inc/admin_header.jsp"></jsp:include>
+		<jsp:include page="../inc/top.jsp"></jsp:include>
 	</header>
 	<article>
-	<h1>전체 극장</h1>
+	<h2>전체 극장</h2>
 	<hr>
 	<div class="theater_all">
 		<jsp:include page="theater_top.jsp"></jsp:include>

@@ -1,4 +1,4 @@
-<%@page import="itwillbs.p2c3.class_will.handler.DateUtils"%>
+<%-- <%@page import="itwillbs.p2c3.class_will.handler.DateUtils"%> --%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -393,7 +393,7 @@
 %>
 
 <header>
-    <jsp:include page="../inc/admin_header.jsp"></jsp:include>
+    <jsp:include page="../inc/top.jsp"></jsp:include>
 </header>
 
 <form action="tic_choose_seat" method="post" id="fr">
