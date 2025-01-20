@@ -20,7 +20,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/member_default.css" rel="stylesheet" type="text/css">
 <body>
 <header>
-	<jsp:include page="../inc/admin_header.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 </header>
 <section class="member_section">
 <div class="member_title">

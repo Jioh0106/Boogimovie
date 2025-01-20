@@ -17,7 +17,7 @@
 </head>
 <body>
 <header>
-	<jsp:include page="/WEB-INF/views/inc/admin_header.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 </header>
 <div class="container">
 	<div class="row">

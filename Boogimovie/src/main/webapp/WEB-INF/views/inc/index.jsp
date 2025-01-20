@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>boogi movie</title>
 </head>
 <body>
-
+	<header>
+		<jsp:include page="../inc/top.jsp"></jsp:include>
+	</header>
+	<div class="m-5">
+		<h1 align="center">boogi movie main</h1>
+	</div>
 </body>
 </html>

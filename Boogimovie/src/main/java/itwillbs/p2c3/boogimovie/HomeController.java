@@ -41,11 +41,11 @@ public class HomeController {
 		//System.out.println("�쁽�옱濡쒓렇�씤�븳 " +member_id);
 		model.addAttribute("member_id", member_id);
 		//System.out.println(movieInfo);
-		return "movie/movie";
+		return "inc/index";
 	}
 }
 
-//	@GetMapping("movieFuture")// �긽�쁺�삁�젙�옉由ъ뒪�듃
+//	@GetMapping("movieFuture")//
 //	public String movieFuture(Model model) {
 //		
 //		List<MovieVO> movieFuture = movieService.getMovieFuture();

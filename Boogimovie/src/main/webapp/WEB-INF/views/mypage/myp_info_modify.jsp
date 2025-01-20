@@ -25,7 +25,7 @@
 
 <body>
 <header>
-	<jsp:include page="../inc/admin_header.jsp"></jsp:include>
+	<jsp:include page="../inc/top.jsp"></jsp:include>
 </header>
 <div class="container1">
 	<div class="container2">
