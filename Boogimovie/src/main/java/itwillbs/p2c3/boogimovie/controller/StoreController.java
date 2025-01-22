@@ -48,7 +48,7 @@ public class StoreController {
 		model.addAttribute("itemInfoJuice", itemInfoJuice);
 		// System.out.println("음료들아 가즈아" + itemInfoJuice); 카테고리 음료들 확인완료
 
-		return "store/store";
+		return "store/boogi_store";
 	}
 	// 스토어 장바구니 ajax관련해서 처리할꺼임.
 
