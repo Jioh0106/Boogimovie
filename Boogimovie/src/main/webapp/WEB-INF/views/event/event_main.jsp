@@ -175,7 +175,7 @@ main {
 
 	<main>
 		<div class="event_title">
-			<h1>이벤트페이지</h1>
+			<h2>부기무비 이벤트</h2>
 		</div>
 		
 		
