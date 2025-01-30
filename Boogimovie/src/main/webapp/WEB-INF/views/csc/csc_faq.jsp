@@ -4,25 +4,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>부기무비 FAQ</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_faq.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_sidebar.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-	crossorigin="anonymous"></script>
-<!-- 제이쿼리 -->
-<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.1.js"></script>
-<style>
-	label + div p{
-		line-height: 0.7;
-	}
-	label + div > p {
-		margin-top: 3px;
-	}
-</style>
+	<meta charset="UTF-8">
+	<title>부기무비 FAQ</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_faq.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_sidebar.css">
+	
+	<style>
+		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+		* {
+		  font-family: "Nanum Gothic", sans-serif;
+		  font-weight: 400;
+		  font-style: normal;
+		}
+		
+		footer {
+			margin-top: 50px;
+		}
+			
+		label + div p{
+			line-height: 0.7;
+		}
+		
+		label + div > p {
+			margin-top: 3px;
+		}
+		
+		#csc_mainTitle {
+			margin-top: 50px;
+		}
+	</style>
 </head>
 <body>
 <div>
@@ -38,9 +49,9 @@
 		<div class="col-md-10">
 			<div class="row">
 				<div id="csc_mainTitle">
-					<h1>FAQ</h1>
+					<h2>FAQ</h2>
+					<hr>
 				</div>
-			<hr>
 			</div>
 			<!-- 검색창 -->
 			<div class="row">
@@ -92,152 +103,158 @@
 	</div>
 </div>
 <!-- admin_footer.jsp -->
-<div>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</div>
-<script type="text/javascript">
-
-let isLoading = false;
-let isEmpty = false;
-let pageNum = 1;
-let index = 0;
-let faqCategory = '';
-let faqSearchKeyword = '';
-
-
-function getScroll(newFaqCategory = "", isEmpty, faqSearchKeyword = "") {
-	
-	if (isLoading) return; // 이미 데이터를 불러오고 있는 중이라면 중복 요청 방지
-	isLoading = true; // 데이터 요청 중 플래그 설정
-	
-    $.ajax({
-        type: "GET",
-        url: "csc_faq.json",
-        data: {
-            parsedPageNum: pageNum,
-            faqCategory: newFaqCategory || faqCategory,
-            faqSearchKeyword : faqSearchKeyword
-        },
-        dataType: "json",
-        success: function(response) {
-            let faqList = response;  // [{},{}]
-            
-//             for(let faq of faqList) {
-// 	            console.log(JSON.stringify(faq));
-// 				console.log(faq.faq_num);
-// 				console.log(faq.faq_subject);
-//             }
-            
-            
-			//true면 기존 아코디언 비움
-            if(isEmpty) {
-				$(".csc_accordion").empty();
-            }
-			//반복문을 통해 ajax를 통해 받아온 값을 아코디언div에 전달
-            $.each(faqList, function(i, faq) {
-				let imgPath = "${pageContext.request.contextPath}/resources/images/cscBulb.png";
-            	let faqNum = faq.faq_num; //faq_num 변수에 저장
-                let accordion = $(".csc_accordion");
-                let checkbox = $("<input>", {
-                    type: "checkbox",
-                    id: "answer" + (i + 1 + index)
-                });
-                let label = $("<label>", {
-                    for: "answer" + (i + 1 + index),
-                    "data-faqNum" : faqNum,
-                    click: function() {
-                    	updateView(faqNum);
-                    }
-                }).append(
-                    $("<span>", {
-                        class: "faq_category",
-                        text: "[" + faq.faq_category + "]"
-                    }),
-                    $("<span>", {
-                        text: faq.faq_subject
-                    }),
-                    $("<em>")
-                );
-                let answerDiv = $("<div>").append(
-                    $("<span>").append(
-                    	$("<em>", {
-                    		class: "faq_blub"
-                    	}),
-                    	"ANSWER"
-                    ),
-                    $("<br>"),
-                    faq.faq_content
-                );
-                
-                accordion.append(checkbox, label, answerDiv);
-            });
+	<footer>
+		<jsp:include page="../inc/footer.jsp"></jsp:include>
+	</footer>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<!-- 제이쿼리 -->
+	<script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.1.js"></script>
+	<script type="text/javascript">
+		
+		let isLoading = false;
+		let isEmpty = false;
+		let pageNum = 1;
+		let index = 0;
+		let faqCategory = '';
+		let faqSearchKeyword = '';
+		
+		
+		function getScroll(newFaqCategory = "", isEmpty, faqSearchKeyword = "") {
 			
-			isLoading = false; // 데이터 요청 완료 후 플래그 해제
-			pageNum++;
-			index += 7;
-        },
-        
-        error: function() {
-            alert("불러오는데 실패했습니다");
-        }
-    });
-}
-//read_count 증가시키는 ajax & 쿠키 전달받기
-function updateView(faqNum) {
-	$.ajax({
-		type: "GET",
-		url: "faqViewCount",
-		data: {
-			faq_num: faqNum
-		},
-		dataType: "json",
-		success: function(response) {
-		},
-		error: function() {
-			alert("호출 실패!");
+			if (isLoading) return; // 이미 데이터를 불러오고 있는 중이라면 중복 요청 방지
+			isLoading = true; // 데이터 요청 중 플래그 설정
+			
+		    $.ajax({
+		        type: "GET",
+		        url: "csc_faq.json",
+		        data: {
+		            parsedPageNum: pageNum,
+		            faqCategory: newFaqCategory || faqCategory,
+		            faqSearchKeyword : faqSearchKeyword
+		        },
+		        dataType: "json",
+		        success: function(response) {
+		            let faqList = response;  // [{},{}]
+		            
+		//             for(let faq of faqList) {
+		// 	            console.log(JSON.stringify(faq));
+		// 				console.log(faq.faq_num);
+		// 				console.log(faq.faq_subject);
+		//             }
+		            
+		            
+					//true면 기존 아코디언 비움
+		            if(isEmpty) {
+						$(".csc_accordion").empty();
+		            }
+					//반복문을 통해 ajax를 통해 받아온 값을 아코디언div에 전달
+		            $.each(faqList, function(i, faq) {
+						let imgPath = "${pageContext.request.contextPath}/resources/images/cscBulb.png";
+		            	let faqNum = faq.faq_num; //faq_num 변수에 저장
+		                let accordion = $(".csc_accordion");
+		                let checkbox = $("<input>", {
+		                    type: "checkbox",
+		                    id: "answer" + (i + 1 + index)
+		                });
+		                let label = $("<label>", {
+		                    for: "answer" + (i + 1 + index),
+		                    "data-faqNum" : faqNum,
+		                    click: function() {
+		                    	updateView(faqNum);
+		                    }
+		                }).append(
+		                    $("<span>", {
+		                        class: "faq_category",
+		                        text: "[" + faq.faq_category + "]"
+		                    }),
+		                    $("<span>", {
+		                        text: faq.faq_subject
+		                    }),
+		                    $("<em>")
+		                );
+		                let answerDiv = $("<div>").append(
+		                    $("<span>").append(
+		                    	$("<em>", {
+		                    		class: "faq_blub"
+		                    	}),
+		                    	"ANSWER"
+		                    ),
+		                    $("<br>"),
+		                    faq.faq_content
+		                );
+		                
+		                accordion.append(checkbox, label, answerDiv);
+		            });
+					
+					isLoading = false; // 데이터 요청 완료 후 플래그 해제
+					pageNum++;
+					index += 7;
+		        },
+		        
+		        error: function() {
+		            alert("불러오는데 실패했습니다");
+		        }
+		    });
 		}
-	});
-}
-
-
-$(function() {
-	//초기 로딩
-    getScroll("", false, "");
-    
-    $("#faq_category").change(function() {
-        let newFaqCategory = $(this).val();
-        faqCategory = newFaqCategory || ""; // faqCategory 업데이트
-        
-        pageNum = 1;
-        faqSearchKeyword = '';
-        getScroll(newFaqCategory, true, faqSearchKeyword);
-        $("#csc_faq_search").val("");
-    });
-    
-    $(document).scroll(function() {
-        let currentScroll = $(this).scrollTop();
-        let documentHeight = $(document).height();
-        let windowHeight = $(window).height();
-        let nowHeight = currentScroll + windowHeight;
-        let bottom = 20; //딱 맞게 scroll바가 아래로 가지 않아도 ajax 호출하도록
-    	
-        // 화면 하단까지 스크롤되었을 때 추가 데이터 가져오기
-		if (currentScroll >= documentHeight - windowHeight - bottom) {
-			console.log("스크롤 이벤트 발생 - pageNum = " + pageNum);
-			
-			getScroll(faqCategory, false, faqSearchKeyword); // 스크롤 이벤트 발생 시 getScroll() 함수 호출
-        }
-    });
-    
-    $("#faqSearch").submit(function() {
-    	faqSearchKeyword = $("#csc_faq_search").val();
-//     	console.log(faqSearchKeyword);
-		pageNum = 1;
-    	getScroll('', true, faqSearchKeyword);
-    });
-    
-});
-
-</script>
+		//read_count 증가시키는 ajax & 쿠키 전달받기
+		function updateView(faqNum) {
+			$.ajax({
+				type: "GET",
+				url: "faqViewCount",
+				data: {
+					faq_num: faqNum
+				},
+				dataType: "json",
+				success: function(response) {
+				},
+				error: function() {
+					alert("호출 실패!");
+				}
+			});
+		}
+		
+		
+		$(function() {
+			//초기 로딩
+		    getScroll("", false, "");
+		    
+		    $("#faq_category").change(function() {
+		        let newFaqCategory = $(this).val();
+		        faqCategory = newFaqCategory || ""; // faqCategory 업데이트
+		        
+		        pageNum = 1;
+		        faqSearchKeyword = '';
+		        getScroll(newFaqCategory, true, faqSearchKeyword);
+		        $("#csc_faq_search").val("");
+		    });
+		    
+		    $(document).scroll(function() {
+		        let currentScroll = $(this).scrollTop();
+		        let documentHeight = $(document).height();
+		        let windowHeight = $(window).height();
+		        let nowHeight = currentScroll + windowHeight;
+		        let bottom = 20; //딱 맞게 scroll바가 아래로 가지 않아도 ajax 호출하도록
+		    	
+		        // 화면 하단까지 스크롤되었을 때 추가 데이터 가져오기
+				if (currentScroll >= documentHeight - windowHeight - bottom) {
+					console.log("스크롤 이벤트 발생 - pageNum = " + pageNum);
+					
+					getScroll(faqCategory, false, faqSearchKeyword); // 스크롤 이벤트 발생 시 getScroll() 함수 호출
+		        }
+		    });
+		    
+		    $("#faqSearch").submit(function() {
+		    	faqSearchKeyword = $("#csc_faq_search").val();
+		//     	console.log(faqSearchKeyword);
+				pageNum = 1;
+		    	getScroll('', true, faqSearchKeyword);
+		    });
+		    
+		});
+	
+	</script>
 </body>
 </html>

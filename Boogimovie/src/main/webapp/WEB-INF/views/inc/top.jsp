@@ -30,9 +30,7 @@
 	}
 	
 	.nav-item .top-nav-link:hover {
-/*   		background-color: #f6d787;   */
 		color: #ff6300;
-/* 		border-bottom: 3px solid black; */
 		border-radius: 0px;
 	}
     
@@ -68,7 +66,7 @@
 
 <body>
 
-	<div id="topnav-area" class="mb-5">
+	<div id="topnav-area" >
 		<div id="topnav" class="">
 		
 			<!-- 로그인/로그아웃/마이페이지 -->
@@ -76,7 +74,8 @@
 				<div class="d-flex flex-row justify-content-end ">
 					<c:choose>
 						<c:when test="${empty sId}">
-							<button type="button" class=" mx-2 topbtn" onclick="location.hrf='member_login'">로그인</button>
+							<button type="button" class=" mx-2 topbtn" onclick="location.href='member_login'">로그인</button>
+							<button type="button" class="mx-2 topbtn" onclick="location.href='member_pre_reg_member'">회원가입</button>
 						</c:when>
 						<c:otherwise>
 							<button type="button" class=" mx-2 topbtn" onclick="member_logout()">로그아웃</button>
@@ -86,7 +85,6 @@
 				</div>
 			
 				<c:if test="${empty sId}">
-					<p class="mx-2" ><a href="member_pre_reg_member">회원가입</a></p>
 				</c:if>
 			
 				<c:if test="${sId eq 'admin' or sId eq 'admin22' or sId eq 'admin33'}">

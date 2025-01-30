@@ -82,7 +82,7 @@ a{
 			</div>
 			<div class="btn-group">
 				<button type="button" class="btn" data-toggle="dropdown" onclick="location.href='csc_oto'">
-					<h5>1대1 문의</h5>
+					<h5>1:1 문의</h5>
 				</button>
 			</div>
 		</div>

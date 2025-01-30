@@ -137,8 +137,8 @@
 			</form>
 		</div>
 	</div>
-<footer>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</footer>
+	<footer>
+		<jsp:include page="../../inc/footer.jsp"></jsp:include>
+	</footer>
 </body>
 </html>

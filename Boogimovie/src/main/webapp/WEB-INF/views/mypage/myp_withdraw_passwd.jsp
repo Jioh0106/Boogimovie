@@ -106,7 +106,7 @@ input[type=text]:focus, input[type=password]:focus {
 	</div><!-- container2 -->
 </div><!-- container1 -->
 <footer>
-	<jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/footer.jsp"></jsp:include>
 </footer>
 <script type="text/javascript">
 

@@ -11,7 +11,86 @@
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.min.js"></script>
 <!-- 극장 theater.css  -->
 <link href="${pageContext.request.contextPath}/resources/css/theater.css" rel="stylesheet" type="text/css">
-<!-- 제이쿼리 -->
+
+</head>
+<body>
+	<article>
+		<div class="theater_timetable_all" >
+			<h4 class="point-text">상영시간표</h4>
+			<div class="time_schedule">
+				<ul class="nav nav-pills nav-fill">
+					<li class="nav-item time_schedule_day">
+						<a class="nav-link day_list_move text-black" href="#"><img src="${pageContext.request.contextPath}/resources/images/chevron-left.svg"></a>
+					</li>
+					<!-- 오늘 버튼 -->
+					<li class="nav-item time_schedule_day">
+						<%
+	                    java.util.Calendar cal = java.util.Calendar.getInstance();
+	                    java.text.SimpleDateFormat sdf_date = new java.text.SimpleDateFormat("MM/dd");
+	                    java.text.SimpleDateFormat sdf_day = new java.text.SimpleDateFormat("E");
+	                    java.text.SimpleDateFormat sdf_id = new java.text.SimpleDateFormat("yyyy-MM-dd");
+	                    String date = sdf_date.format(cal.getTime());
+	                    String day = sdf_day.format(cal.getTime());
+	                    String id = sdf_id.format(cal.getTime());
+	                	%>
+						<a class="nav-link day_list text-black" aria-current="page" id="<%= id %>">
+							<%= date %><br>오늘
+						</a>
+					</li>
+					<!-- 내일 버튼 -->
+					<li class="nav-item time_schedule_day">
+						<%
+	                    cal.add(java.util.Calendar.DAY_OF_MONTH, 1);
+	                    String tomorrow_date = sdf_date.format(cal.getTime());
+	                    String tomorrow_day = sdf_day.format(cal.getTime());
+	                    String tomorrow_id = sdf_id.format(cal.getTime());
+	                	%>
+						<a class="nav-link day_list text-black" id="<%= tomorrow_id %>">
+							<%= tomorrow_date %><br>내일
+						</a>
+					</li>
+					<%-- 나머지 날짜 버튼들에 월과 일 출력 --%>
+		            <% 
+		                for(int i = 2; i < 15; i++) {
+		                    cal.add(java.util.Calendar.DAY_OF_MONTH, 1);
+		                    String future_date = sdf_date.format(cal.getTime());
+		                    String future_day = sdf_day.format(cal.getTime());
+		                    String future_id = sdf_id.format(cal.getTime());
+		            %>
+		            
+					<!-- 이후 날짜 -->
+					<li class="nav-item time_schedule_day">
+						<a class="nav-link day_list text-black" id="<%=future_id%>">
+							<%= future_date %><br><%= future_day %>
+						</a>
+					</li>
+					<% } %>
+					<li class="nav-item time_schedule_day">
+						<a class="nav-link day_list_move text-black" href="#">
+							<img src="${pageContext.request.contextPath}/resources/images/chevron-right.svg">
+						</a>
+					</li>
+				</ul>
+			</div> <!-- time_schedule 끝 -->
+			<br id="timetableStart">
+				<!-- AJAX로 상영타임테이블 출력 -->
+			<div class="timetable">
+			</div> <!-- timetable -->
+			<div>
+				<fieldset id="timetable_info" >
+					<ul>
+						<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>
+						<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>
+					</ul>
+				</fieldset>
+			</div>
+			
+		</div> <!-- theater_timetable_all -->
+	</article>	
+	
+	
+	
+	<!-- 제이쿼리 -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-3.7.1.js"></script>
 
 <script type="text/javascript">
@@ -152,85 +231,6 @@
 	});
 
 </script>
-</head>
-<body>
-	<article>
-		<div class="theater_timetable_all" >
-			<h4 class="text-primary">상영시간표</h4>
-			<div class="time_schedule">
-				<ul class="nav nav-pills nav-fill">
-					<li class="nav-item time_schedule_day">
-						<a class="nav-link day_list_move text-black" href="#"><img src="${pageContext.request.contextPath}/resources/images/chevron-left.svg"></a>
-					</li>
-					<!-- 오늘 버튼 -->
-					<li class="nav-item time_schedule_day">
-						<%
-	                    java.util.Calendar cal = java.util.Calendar.getInstance();
-	                    java.text.SimpleDateFormat sdf_date = new java.text.SimpleDateFormat("MM/dd");
-	                    java.text.SimpleDateFormat sdf_day = new java.text.SimpleDateFormat("E");
-	                    java.text.SimpleDateFormat sdf_id = new java.text.SimpleDateFormat("yyyy-MM-dd");
-	                    String date = sdf_date.format(cal.getTime());
-	                    String day = sdf_day.format(cal.getTime());
-	                    String id = sdf_id.format(cal.getTime());
-	                	%>
-						<a class="nav-link day_list text-black" aria-current="page" id="<%= id %>">
-							<%= date %><br>오늘
-						</a>
-					</li>
-					<!-- 내일 버튼 -->
-					<li class="nav-item time_schedule_day">
-						<%
-	                    cal.add(java.util.Calendar.DAY_OF_MONTH, 1);
-	                    String tomorrow_date = sdf_date.format(cal.getTime());
-	                    String tomorrow_day = sdf_day.format(cal.getTime());
-	                    String tomorrow_id = sdf_id.format(cal.getTime());
-	                	%>
-						<a class="nav-link day_list text-black" id="<%= tomorrow_id %>">
-							<%= tomorrow_date %><br>내일
-						</a>
-					</li>
-					<%-- 나머지 날짜 버튼들에 월과 일 출력 --%>
-		            <% 
-		                for(int i = 2; i < 15; i++) {
-		                    cal.add(java.util.Calendar.DAY_OF_MONTH, 1);
-		                    String future_date = sdf_date.format(cal.getTime());
-		                    String future_day = sdf_day.format(cal.getTime());
-		                    String future_id = sdf_id.format(cal.getTime());
-		            %>
-		            
-					<!-- 이후 날짜 -->
-					<li class="nav-item time_schedule_day">
-						<a class="nav-link day_list text-black" id="<%=future_id%>">
-							<%= future_date %><br><%= future_day %>
-						</a>
-					</li>
-					<% } %>
-					<li class="nav-item time_schedule_day">
-						<a class="nav-link day_list_move text-black" href="#">
-							<img src="${pageContext.request.contextPath}/resources/images/chevron-right.svg">
-						</a>
-					</li>
-				</ul>
-			</div> <!-- time_schedule 끝 -->
-			<br id="timetableStart">
-				<!-- AJAX로 상영타임테이블 출력 -->
-			<div class="timetable">
-			</div> <!-- timetable -->
-			<div>
-				<fieldset id="timetable_info" >
-					<ul>
-						<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>
-						<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>
-					</ul>
-				</fieldset>
-			</div>
-			
-		</div> <!-- theater_timetable_all -->
-	</article>	
-	
-	
-	
-	
 
 
 </body>

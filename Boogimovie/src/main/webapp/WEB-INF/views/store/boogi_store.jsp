@@ -3,145 +3,137 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<style type="text/css">
-@import
-	url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap')
-	;
-
-* {
-	font-family: "Nanum Gothic", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	/*   	border: 1px solid skyblue;   */
-}
-
-#wrap {
-	width: 1400px;
-	margin: 0 auto;
-}
-
-article {
-	margin-top: 30px;
-	margin-bottom: 50px;
-	width: 1400px;
-	height: 50px;
-}
-
-section {
-	width: 1400px;
-	height: 1500px;
-	/* 	background-color: #ffca28; */
-}
-
-.content {
-	margin-top: 10px;
-	margin-left: 10px;
-	width: 660px;
-	height: 1400px;
-	float: left;
-}
-
-.contentPay {
-	margin-top: 10px;
-	margin-left: 10px;
-	width: 700px;
-	height: 1400px;
-	float: right;
-	font-size: 25px;
-	overflow-y: auto;
-}
-
-.cart-item input[type="number"] {
-	text-align: right; /* 넘버박스 숫자를 오른쪽으로 정렬 */
-	font-size: 20px;
-	width: 50px;
-}
-
-.cart-item button {
-	
-}
-
-.snack1_box, .snack2_box, .snack3_box, .snack4_box {
-	font-size: 24px;
-	height: 200px;
-	width: 300px;
-	float: right;
-	margin-top: 20px;
-}
-
-.snack1_image, .snack2_image, .snack3_image, .snack4_image {
-	height: 200px;
-	width: 300px;
-	float: left;
-}
-
-.snack1_image img, .snack2_image img, .snack3_image img, .snack4_image img
-	{
-	margin-left: 30px;
-	max-width: 100%; /* 이미지의 최대 너비를 부모 요소에 맞게 조정합니다. */
-	max-height: 100%; /* 이미지의 최대 높이를 부모 요소에 맞게 조정합니다. */
-}
-
-.snack1_box select, .snack2_box select, .snack3_box select, .snack4_box select
-	{
-	margin-top: 10px;
-	border: 1px solid black;
-}
-
-.snack1 {
-	width: 650px;
-	height: 300px;
-}
-
-.snack1_name, .snack2_name, .snack3_name, .snack4_name {
-	text-align: center;
-	/* 	font-size: 24px; */
-}
-
-.snack2 {
-	width: 650px;
-	height: 300px;
-}
-
-.snack3 {
-	width: 650px;
-	height: 300px;
-}
-
-.snack4 {
-	width: 650px;
-	height: 300px;
-}
-
-.bottomButton {
-	text-align: center;
-	margin-top: 10px margin-right:30px;
-	font-size: 24px;
-}
-
-footer {
-	width: 100%;
-	height: 100px;
-	/* 	background-color: #ffb300; */
-}
-
-.snackBtn {
-	margin-top: 10px;
-}
-</style>
-<title>부기무비 스토어</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet" type="text/css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap');
+			
+		
+		* {
+			font-family: "Nanum Gothic", sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		
+		#wrap {
+			width: 1400px;
+			margin: 0 auto;
+		}
+		
+		article {
+			margin-top: 30px;
+			margin-bottom: 50px;
+			width: 1400px;
+			height: 50px;
+		}
+		
+		section {
+			width: 1400px;
+			height: 1500px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		
+		.content {
+			margin-top: 10px;
+			margin-left: 10px;
+			width: 660px;
+			height: 1400px;
+			float: left;
+		}
+		
+		.contentPay {
+			margin-top: 10px;
+			margin-left: 10px;
+			width: 700px;
+			height: 1400px;
+			float: right;
+			overflow-y: auto;
+		}
+		
+		.cart-item input[type="number"] {
+			text-align: right; /* 넘버박스 숫자를 오른쪽으로 정렬 */
+			width: 50px;
+		}
+		
+		.cart-item button {
+			
+		}
+		
+		.snack1_box, .snack2_box, .snack3_box, .snack4_box {
+			height: 200px;
+			width: 300px;
+			float: right;
+			margin-top: 20px;
+		}
+		
+		.snack1_image, .snack2_image, .snack3_image, .snack4_image {
+			height: 200px;
+			width: 300px;
+			float: left;
+		}
+		
+		.snack1_image img, .snack2_image img, .snack3_image img, .snack4_image img
+			{
+			margin-left: 30px;
+			max-width: 100%; /* 이미지의 최대 너비를 부모 요소에 맞게 조정합니다. */
+			max-height: 100%; /* 이미지의 최대 높이를 부모 요소에 맞게 조정합니다. */
+		}
+		
+		.snack1_box select, .snack2_box select, .snack3_box select, .snack4_box select
+			{
+			margin-top: 10px;
+			border: 1px solid black;
+		}
+		
+		.snack1 {
+			width: 650px;
+			height: 300px;
+		}
+		
+		.snack1_name, .snack2_name, .snack3_name, .snack4_name {
+			text-align: center;
+			/* 	font-size: 24px; */
+		}
+		
+		.snack2 {
+			width: 650px;
+			height: 300px;
+		}
+		
+		.snack3 {
+			width: 650px;
+			height: 300px;
+		}
+		
+		.snack4 {
+			width: 650px;
+			height: 300px;
+		}
+		
+		.bottomButton {
+			text-align: center;
+			margin-top: 10px margin-right:30px;
+			font-size: 24px;
+		}
+		
+		footer {
+			width: 100%;
+			height: 100px;
+			/* 	background-color: #ffb300; */
+		}
+		
+		.snackBtn {
+			margin-top: 10px;
+		}
+		</style>
+	<title>부기무비 스토어</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+		rel="stylesheet" type="text/css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<header>
@@ -149,10 +141,8 @@ footer {
 	</header>
 	<div id="wrap">
 		<section>
-			<article>
-				<h1>부기 스토어</h1>
-				<hr>
-			</article>
+			<h2>부기 스토어</h2>
+			<hr>
 			<div class="content">
 				<div class="snack1">
 					<div class="snack1_name">
@@ -276,7 +266,7 @@ footer {
 			</div>
 		</section>
 		<footer>
-			<jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
 		</footer>
 	</div>
 

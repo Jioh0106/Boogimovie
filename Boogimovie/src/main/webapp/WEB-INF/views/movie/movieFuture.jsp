@@ -186,7 +186,7 @@ footer {
 			<h2 class="end-message">모든 상영예정 영화가 다 출력되었습니다.</h2>
 		</section>
 		<footer>
-			<jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
 		</footer>
 	</div>
 

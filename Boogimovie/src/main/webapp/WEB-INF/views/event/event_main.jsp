@@ -15,19 +15,22 @@
 
 * {
   font-family: "Nanum Gothic", sans-serif;
-  font-weight: 400;
   font-style: normal;
 }
+
+footer {
+	margin-top: 50px;
+}
+
 main {
 	width: 1400px;
 	margin: 0 auto;
 }
 
 .event_title {
-	text-align: left;
-	margin: 30px 0px;
-	border-bottom: 1px solid lightgray;
+	margin: 50px 0px 30px 0px;
 }
+
 .event_title > h1{
 	margin-bottom: 15px;
 }
@@ -176,6 +179,7 @@ main {
 	<main>
 		<div class="event_title">
 			<h2>부기무비 이벤트</h2>
+			<hr>
 		</div>
 		
 		
@@ -269,7 +273,7 @@ main {
 	</main>
 
 	<footer>
-		<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
+		<jsp:include page="../inc/footer.jsp"></jsp:include>
 	</footer>
 	<script type="text/javascript">
 		function event_detail(event_num) {

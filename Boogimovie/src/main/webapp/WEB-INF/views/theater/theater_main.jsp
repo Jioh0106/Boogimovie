@@ -24,7 +24,7 @@
 		<jsp:include page="../inc/top.jsp"></jsp:include>
 	</header>
 	<article>
-	<h2>전체 극장</h2>
+	<h2>부기무비 전체 극장</h2>
 	<hr>
 	<div class="theater_all">
 		<jsp:include page="theater_top.jsp"></jsp:include>
@@ -38,7 +38,7 @@
 		<div class="theater_main_cont" id="theater-event">
 			<div class="row">
 				<div class="col-11">
-					<h3 class="text-primary">극장 이벤트</h3>
+					<h3 class="point-text">극장 이벤트</h3>
 				</div>
 				<div class="col">
 					<a href="event" style="text-decoration: none;">더보기 
@@ -61,7 +61,7 @@
 		<div class="theater_main_cont" id="theater-notice">
 			<div class="row">
 	    		<div class="col-11">
-	     			<h3 class="text-primary">극장 공지사항</h3>	
+	     			<h3 class="point-text">극장 공지사항</h3>	
 	   			</div>
 	    		<div class="col">
 	      			<a href="csc_notice" style="text-decoration: none;">더보기 
@@ -96,6 +96,7 @@
 		</div>	
 	</article>
 	<footer>
+		<jsp:include page="../inc/footer.jsp"></jsp:include>
 	</footer>
 	<!-- 카카오맵 API 라이브러리 -->
  	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b60a9d61c7090ce24f1b5bfa7ab26622"></script>

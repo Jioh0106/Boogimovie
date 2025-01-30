@@ -25,7 +25,7 @@
 <body>
 	<div class="theater_info">
 		<div class="theater_info_content"> <!-- 시설안내 -->
-			<h4 class="text-primary">시설 안내</h4>
+			<h4 class="point-text">시설 안내</h4>
 			<div> <!-- 지점별 운영 시간 -->
 				<h5>■ 운영 시간</h5>
 				${theater.theater_hours}
@@ -51,7 +51,7 @@
 		</div> <!-- theater_info_content 끝 -->
 		<br>
 		<div class="theater_info_content"> <!-- 교통안내 -->
-			<h4 class="text-primary">교통 안내</h4>
+			<h4 class="point-text">교통 안내</h4>
 			<div class="theater_detail_map"> <!-- 약도 -->
 				<h5>■ 약도</h5>
 				<p>도로명 주소: ${theater.theater_address}</p>
@@ -98,7 +98,7 @@
 		<div class="theater_info_content"> <!-- 공지사항 -->
 			<div class="row">
 	    		<div class="col-11">
-					<h4 class="text-primary">공지사항</h4>
+					<h4 class="point-text">공지사항</h4>
 	   			</div>
 	    		<div class="col">
 	      			<a href="csc_notice"  style="text-decoration: none;">더보기

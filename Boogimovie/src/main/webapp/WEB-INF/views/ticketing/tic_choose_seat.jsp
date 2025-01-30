@@ -263,7 +263,7 @@
     
     
 <div class="choose_seat_title">
-	<h3>좌석 선택</h3>
+	<h2>좌석 선택</h2>
 	<hr>
 </div>
 <section class="choose_seat_section">
@@ -356,7 +356,7 @@
 
 
 <footer style="margin-top: 100px;">
-	<jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/footer.jsp"></jsp:include>
 </footer>
 
 

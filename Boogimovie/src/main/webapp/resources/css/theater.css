@@ -17,6 +17,7 @@ body {
 article {
 	width: 1400px;
 	margin: auto;
+	margin-top: 50px;
 }
 
 h1 {
@@ -40,14 +41,15 @@ h1 {
 
 .top_theater_name {
 	width: 100px;
-	border: 1px solid #0d6efd;
+	border: 1px solid #ff6300;
+	background-color: #f6d787;
 	margin: 5px;
-	color:#0d6efd;
+	color:black;
 }
 
 .top_theater_name:hover {
-	background-color: #0d6efd;
-	color: white;
+	background-color: #fff;
+	color:#ff6300;
 }
 
 .form-check{
@@ -83,6 +85,21 @@ table {
 
 .theater_top{
 	margin: auto;
+}
+
+.detail_tab {
+	color: black;
+	font-size: 18px;
+	padding:15px;
+}
+
+.detail_tab:hover {
+	color: #ff6300;	
+}
+
+.point-text {
+	color: #ff6300;
+	font-weight: bolder;
 }
 
 
@@ -166,7 +183,6 @@ table {
 	border: 1px solid gray;
 	
 }
-
 
 
 .timetable_movie_area{

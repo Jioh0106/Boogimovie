@@ -155,7 +155,7 @@
 	</main>
 
 	<footer>
-		<jsp:include page="../../inc/admin_footer.jsp"></jsp:include>
+		<jsp:include page="../../inc/footer.jsp"></jsp:include>
 	</footer>
 
 	<script type="text/javascript">

@@ -17,9 +17,18 @@
 <!-- 제이쿼리 -->
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.1.js"></script>
 <style>
+	@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+	* {
+	  font-family: "Nanum Gothic", sans-serif;
+	  font-weight: 400;
+	  font-style: normal;
+	}
 	th[colspan="4"] {
 		text-align: center;
 		font-size: 1.2em;
+	}
+	#csc_mainTitle {
+		margin-top: 50px;
 	}
 </style>
 </head>
@@ -38,9 +47,9 @@
 		<!-- content 영역 - 게시판 형식의 공지/뉴스 -->
 		<div class="col-10">
 			<div id="csc_mainTitle">
-				<h1>공지사항</h1>
+				<h2>공지사항</h2>
+				<hr>
 			</div>
-			<hr>
 			<div class="row">
 			
 				<div class="col-1 mt-3" id ="noticeCount">
@@ -143,10 +152,9 @@
 		</div>
 	</div>
 </div>
-<!-- footer -->
-<footer>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</footer>
+	<footer>
+		<jsp:include page="../inc/footer.jsp"></jsp:include>
+	</footer>
 <script type="text/javascript">
 
 

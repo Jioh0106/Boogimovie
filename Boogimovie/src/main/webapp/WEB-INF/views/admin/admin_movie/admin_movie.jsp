@@ -263,7 +263,7 @@ th:nth-child(7), td:nth-child(7) {
 	</main>
 
 	<footer>
-		<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
+		<jsp:include page="../../inc/footer.jsp"></jsp:include>
 	</footer>
 
 

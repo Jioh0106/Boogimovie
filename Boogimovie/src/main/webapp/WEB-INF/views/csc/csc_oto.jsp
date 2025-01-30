@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_oto.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/csc_sidebar.css">
+
+<style type="text/css">
+	@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+	* {
+	  font-family: "Nanum Gothic", sans-serif;
+	  font-weight: 400;
+	  font-style: normal;
+	}
+
+</style>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -29,9 +39,9 @@
 		<div class="col-9">
 			<form action="csc_oto" id="csc_oto_form" method="post" enctype="multipart/form-data">
 				<div id="csc_mainTitle">
-					<h1 class="csc-title">1 대 1 문의</h1>
+					<h2 class="csc-title">1:1 문의</h2>
+					<hr>
 				</div>
-				<hr>
 				<div class="csc_explain w-75">
 					<p><small>고객님의 문의에 답변하는 직원은 고객 여러분의 가족 중 한 사람일 수 있습니다.<br>
 					고객의 언어폭력(비하, 욕설, 반말, 성희롱 등)으로부터 직원을 보호하기 위해<br>
@@ -135,9 +145,9 @@
 	</div>
 </div>
 <!-- footer -->
-<footer>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</footer>
+	<footer>
+		<jsp:include page="../inc/footer.jsp"></jsp:include>
+	</footer>
 <script type="text/javascript">
 $(function () {
 	console.log($("#oto_category").val());

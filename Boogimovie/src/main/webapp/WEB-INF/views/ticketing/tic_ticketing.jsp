@@ -530,7 +530,7 @@
 </form>
 
 <footer>
-    <jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+    <jsp:include page="../inc/footer.jsp"></jsp:include>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

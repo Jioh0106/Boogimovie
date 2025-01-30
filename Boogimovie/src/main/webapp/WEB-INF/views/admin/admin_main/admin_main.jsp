@@ -138,7 +138,7 @@ body {
 	</main>
 
 	<footer>
-		<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
+		<jsp:include page="../../inc/footer.jsp"></jsp:include>
 	</footer>
 	<script type="text/javascript">
 		var ctx = document.getElementById("myChart").getContext('2d');

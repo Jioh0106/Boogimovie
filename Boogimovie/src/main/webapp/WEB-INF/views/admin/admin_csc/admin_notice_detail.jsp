@@ -61,9 +61,9 @@
 	</div>
 
 </div>
-<footer>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</footer>
+	<footer>
+		<jsp:include page="../../inc/footer.jsp"></jsp:include>
+	</footer>
 <script>
     let noticeNum = ${notice.notice_num};
     let maxNoticeNum = ${maxNotice}; // maxNoticeNum은 마지막 notice_num 값

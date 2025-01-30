@@ -191,7 +191,7 @@ hr{
 	</div><!-- container2 -->
 </div><!-- container -->
 <footer>
-	<jsp:include page="../inc/admin_footer.jsp"></jsp:include>
+	<jsp:include page="../inc/footer.jsp"></jsp:include>
 </footer>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.min.js">
 

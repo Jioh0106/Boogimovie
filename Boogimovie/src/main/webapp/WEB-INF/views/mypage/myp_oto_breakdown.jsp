@@ -14,108 +14,108 @@
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 	crossorigin="anonymous"></script>
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap');
-
-* {
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-table {
-  border-collapse: collapse;
-  width: 90%;
-  margin: 0rem auto;
-  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
-  background-color: white;
-  text-align: center;
-}
-
- /* 테이블 행 */
-th, td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #1b1b1b;
-  color: #ddd;
-}
-
-/* 테이블 올렸을 때 */
-tbody tr:hover {
-  background-color: #eee;
-  opacity: 0.9;
-  cursor: pointer;
-}
-
-/* 테이블 비율 */
-th:nth-child(1),
-td:nth-child(1) {
-  width: 5%;
-}
-
-th:nth-child(2),
-td:nth-child(2) {
-  width: 30%;
-}
-
-th:nth-child(3),
-td:nth-child(3) {
-  width: 10%;
-}
-th:nth-child(4),
-td:nth-child(4) {
-  width: 10%;
-}
-th:nth-child(5),
-td:nth-child(5) {
-  width: 10%;
-}
-th:nth-child(6),
-td:nth-child(6) { 
-   width: 15%;  
-} 
-th:nth-child(7),
-td:nth-child(7) { 
-   width: 10%;  
-} 
-th:nth-child(8),
-td:nth-child(8) { 
-   width: 10%;  
-}
-td:nth-child(8) {
-	color: red;
-}
-
-.myp_inquiry > img {
-	width:27px;
-	height:27px;
-}
-.myp_inquiry {
-	vertical-align: middle;
-	font-weight: bold;
-	font-size: 30px;
-	margin: 20px 0;
-}
-#myp_title {
-	margin-top: 20px;
-}
-
-.breakdown_pageArea {
-	margin-top: 20px;
-	text-align: center;
-}
-
-.breakdown_pageArea > nav {
-	display: inline-block;
-}
-input[value="답변확인"] {
-	background: skyblue;
-	border-radius: 5px;
-	border: 0;
-	padding:3px;
-}
+	
+	@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap');
+	
+	* {
+	  font-family: "Nanum Gothic", sans-serif;
+	  font-weight: 400;
+	  font-style: normal;
+	}
+	table {
+	  border-collapse: collapse;
+	  width: 90%;
+	  margin: 0rem auto;
+	  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
+	  background-color: white;
+	  text-align: center;
+	}
+	
+	 /* 테이블 행 */
+	th, td {
+	  padding: 8px;
+	  border-bottom: 1px solid #ddd;
+	}
+	
+	th {
+	  background-color: #1b1b1b;
+	  color: #ddd;
+	}
+	
+	/* 테이블 올렸을 때 */
+	tbody tr:hover {
+	  background-color: #eee;
+	  opacity: 0.9;
+	  cursor: pointer;
+	}
+	
+	/* 테이블 비율 */
+	th:nth-child(1),
+	td:nth-child(1) {
+	  width: 5%;
+	}
+	
+	th:nth-child(2),
+	td:nth-child(2) {
+	  width: 30%;
+	}
+	
+	th:nth-child(3),
+	td:nth-child(3) {
+	  width: 10%;
+	}
+	th:nth-child(4),
+	td:nth-child(4) {
+	  width: 10%;
+	}
+	th:nth-child(5),
+	td:nth-child(5) {
+	  width: 10%;
+	}
+	th:nth-child(6),
+	td:nth-child(6) { 
+	   width: 15%;  
+	} 
+	th:nth-child(7),
+	td:nth-child(7) { 
+	   width: 10%;  
+	} 
+	th:nth-child(8),
+	td:nth-child(8) { 
+	   width: 10%;  
+	}
+	td:nth-child(8) {
+		color: red;
+	}
+	
+	.myp_inquiry > img {
+		width:27px;
+		height:27px;
+	}
+	.myp_inquiry {
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: 30px;
+		margin: 20px 0;
+	}
+	#myp_title {
+		margin-top: 20px;
+	}
+	
+	.breakdown_pageArea {
+		margin-top: 20px;
+		text-align: center;
+	}
+	
+	.breakdown_pageArea > nav {
+		display: inline-block;
+	}
+	input[value="답변확인"] {
+		background: skyblue;
+		border-radius: 5px;
+		border: 0;
+		padding:3px;
+	}
 
 </style>
 </head>
@@ -225,15 +225,15 @@ input[value="답변확인"] {
 	</div>
 </div>
 
-<footer>
-	<jsp:include page="/WEB-INF/views/inc/admin_footer.jsp"></jsp:include>
-</footer>
-<script type="text/javascript">
-	function otoConfirm(num) {
-		if(confirm("삭제하시겠습니까?")) {
-			location.href="myp_oto_delete?oto_num=" + num;
-		}
-	};
-</script>
+    <footer>
+        <jsp:include page="../inc/footer.jsp"></jsp:include>
+    </footer>
+	<script type="text/javascript">
+		function otoConfirm(num) {
+			if(confirm("삭제하시겠습니까?")) {
+				location.href="myp_oto_delete?oto_num=" + num;
+			}
+		};
+	</script>
 </body>
 </html>

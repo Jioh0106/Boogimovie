@@ -1,7 +1,5 @@
 package itwillbs.p2c3.boogimovie;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -29,18 +27,8 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(Model model , HttpSession session,MemberVO member, MovieVO movieTrail) {
-		//System.out.println("�쁽�옱 �븘�씠�뵒" + member.getMember_id());
-		List<MovieVO> movieInfo = movieService.getMovieList();
-		movieTrail = movieService.getMovieTrail();
-		//System.out.println("臾대퉬�듃�젅�씪�윭"+movieTrail);
-		model.addAttribute("movieTrail", movieTrail);
-		model.addAttribute("movieInfo", movieInfo);
-//		session.setAttribute("sId", "admin");
-		String member_id = (String) session.getAttribute("sId");
-		session.setAttribute("sId", "wnsgur123");
-		//System.out.println("�쁽�옱濡쒓렇�씤�븳 " +member_id);
-		model.addAttribute("member_id", member_id);
-		//System.out.println(movieInfo);
+		
+		
 		return "inc/index";
 	}
 }
