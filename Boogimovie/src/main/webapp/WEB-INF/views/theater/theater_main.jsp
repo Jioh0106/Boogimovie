@@ -36,17 +36,17 @@
 		<br>
 		<!-- 극장 관련 이벤트 불러오기 -->
 		<div class="theater_main_cont" id="theater-event">
-			<div class="row">
+			<div class="row mb-5">
 				<div class="col-11">
 					<h3 class="point-text">극장 이벤트</h3>
 				</div>
 				<div class="col">
-					<a href="event" style="text-decoration: none;">더보기 
+					<a href="event" style="text-decoration: none; color: #black;">더보기 
 	      				<img src="${pageContext.request.contextPath}/resources/images/chevron-right.svg" width="15" > 
 	      			</a>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mb-5">
 				<c:forEach var="event" items="${eventList}" begin="0" end="2" >
 						<div class="col">
 							<a href="eventDetail?event_num=${event.event_num}">
@@ -58,13 +58,13 @@
 		</div>
 		<br>
 		<!-- 극장 관련 공지사항 불러오기 -->
-		<div class="theater_main_cont" id="theater-notice">
+		<div class="theater_main_cont mt-5" id="theater-notice">
 			<div class="row">
-	    		<div class="col-11">
+	    		<div class="col-11 mt-5">
 	     			<h3 class="point-text">극장 공지사항</h3>	
 	   			</div>
 	    		<div class="col">
-	      			<a href="csc_notice" style="text-decoration: none;">더보기 
+	      			<a href="csc_notice" style="text-decoration: none; color: #black;">더보기 
 	      				<img src="${pageContext.request.contextPath}/resources/images/chevron-right.svg" width="15"> 
 	      			</a>
 	   			</div>

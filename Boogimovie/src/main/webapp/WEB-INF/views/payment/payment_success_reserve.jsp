@@ -67,14 +67,14 @@
 				<p>티켓 가격 :
 					<c:choose>
 						<c:when test="${not empty coupon.coupon_name}">
-							${pay.ticket_pay_price + pay.use_point + (coupon.coupon_value*-1)}원
+							<span pattern="#,###">${pay.ticket_pay_price + pay.use_point + (coupon.coupon_value*-1)}</span>원
 						</c:when>
 						<c:otherwise>
-							${pay.ticket_pay_price + pay.use_point}
+							<span pattern="#,###">${pay.ticket_pay_price + pay.use_point}</span>
 						</c:otherwise>
 					</c:choose>
 				</p>
-				<p>포인트 사용 : ${pay.use_point}원</p>
+				<p>포인트 사용 : <span pattern="#,###">${pay.use_point}</span>원</p>
 				<p>쿠폰 : 
 					<c:choose>
 						<c:when test="${not empty coupon.coupon_name}">
@@ -86,7 +86,7 @@
 					</c:choose>
 				</p>
 				<hr>
-				<p><b>최종 결제금액 : ${pay.ticket_pay_price} 원</b></p>
+				<p><b>최종 결제금액 : <span pattern="#,###">${pay.ticket_pay_price}</span> 원</b></p>
 			</div>
 			<div>
 				<h5 class="text-primary">예매 정보</h5>

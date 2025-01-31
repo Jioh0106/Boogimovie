@@ -185,7 +185,7 @@
 								</ul>
 								<div class="card-footer">
 									<p><b> 총 금액
-										<span id="total_fee" class="pay_number">${total_fee}</span>원
+										<span id="total_fee" class="pay_number" pattern="#,###">${total_fee}</span>원
 									</b></p>
 								</div> <!-- card-footer -->
 							</div> <!-- payment_status_box -->
@@ -196,17 +196,17 @@
 								<ul class="list-group list-group-flush">
 									<li class="list-group-item">
 										<p>사용 포인트 
-											<span id="point_apply" class="pay_number">0</span>
+											<span id="point_apply" class="pay_number" pattern="#,###">0</span>
 										</p>
 									</li>
 									<li class="list-group-item">
 										<p>사용 쿠폰 
-											<span id="coupon_apply" class="pay_number">0</span>
+											<span id="coupon_apply" class="pay_number" pattern="#,###">0</span>
 										</p>
 									</li>
 								</ul>
 								<div class="card-footer">
-									<p><b>총 할인 적용 <span id="discount_sum" class="pay_number">0</span>원</b></p>
+									<p><b>총 할인 적용 <span id="discount_sum" class="pay_number" pattern="#,###">0</span>원</b></p>
 								</div>
 							</div>
 							<br>
@@ -214,7 +214,7 @@
 								<ul class="list-group list-group-flush">
 									<li class="list-group-item">
 										<p><b>최종 결제금액 
-											<span id="final_amount" class="pay_number">${total_fee}</span> <!-- 첫 금액은  total_fee랑 같아야 함-->
+											<span id="final_amount" class="pay_number" pattern="#,###">${total_fee}</span> <!-- 첫 금액은  total_fee랑 같아야 함-->
 										원</b></p>
 									</li>
 									<li class="list-group-item">

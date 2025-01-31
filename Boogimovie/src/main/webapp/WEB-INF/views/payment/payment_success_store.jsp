@@ -65,8 +65,8 @@
 				<h5 class="text-primary">결제 정보</h5>
 				<p>결제수단 : ${store_pay.store_pay_type}</p>
 				<hr>
-				<p>총 가격 : ${total_fee}원</p>
-				<p>포인트 사용 : ${store_pay.use_point}원</p>
+				<p>총 가격 : <span pattern="#,###">${total_fee}</span> 원</p>
+				<p >포인트 사용 : <span pattern="#,###">${store_pay.use_point}</span>원</p>
 				<p>쿠폰 : 
 					<c:choose>
 						<c:when test="${not empty coupon.coupon_name}">
@@ -78,7 +78,7 @@
 					</c:choose>
 				</p>
 				<hr>
-				<p><b>최종 결제금액 : ${store_pay.store_pay_price}원</b></p>
+				<p><b>최종 결제금액 : <span pattern="#,###">${store_pay.store_pay_price}</span>원</b></p>
 			</div>
 			<div>
 				<h5 class="text-primary">구매 정보</h5>
