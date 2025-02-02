@@ -91,10 +91,12 @@ table {
 	color: black;
 	font-size: 18px;
 	padding:15px;
+	font-weight: bolder;
 }
 
 .detail_tab:hover {
 	color: #ff6300;	
+	font-weight: bolder;
 }
 
 .point-text {
@@ -115,6 +117,8 @@ table {
 .theater_price_all{
 	margin: 30px;
 }
+
+
 
   
 /* ========================================= */
